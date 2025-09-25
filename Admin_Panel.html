@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel - Leaderboard</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/admin.css">
+</head>
+
+<body>
+    <h1 style="text-align:center;">Admin Panel</h1>
+    <div class="centered">
+        <form id="admin-form" style="background: #f8faff; border: 2px solid #4f8cff; border-radius: 8px; padding: 24px 32px; box-shadow: 0 2px 12px rgba(79,140,255,0.07); display: flex; gap: 24px; align-items: center;">
+            <input type="text" id="name" placeholder="Name" required style="padding: 8px 14px; border: 1.5px solid #4f8cff; border-radius: 4px;">
+            <input type="number" id="avgPower" step="0.01" min="0" placeholder="Distance" required style="padding: 8px 14px; border: 1.5px solid #4f8cff; border-radius: 4px;">
+            <input type="number" id="watts" step="1" min="0" placeholder="Watts" required style="padding: 8px 14px; border: 1.5px solid #4f8cff; border-radius: 4px;">
+            <input type="text" id="company" placeholder="Company Name" required style="padding: 8px 14px; border: 1.5px solid #4f8cff; border-radius: 4px;">
+            <button type="submit" style="background: #4f8cff; color: #fff; border: none; border-radius: 4px; padding: 8px 18px; font-weight: bold; cursor: pointer;">Add</button>
+        </form>
+        
+        
+        <!-- Clear button -->
+        <button id="clear-storage-btn" class="clear-btn">Clear Leaderboard</button>
+        
+        <!-- Download Excel button -->
+        <button id="download-excel" class="clock-btn">Download Leaderboard (Excel)</button>
+
+        <div id="admin-message" style="margin-top: 20px; color: #1a8f1a; font-weight: bold;"></div>
+    </div>
+
+    <!-- Load SheetJS locally before script.js -->
+    <script src="./libs/xlsx.full.min.js"></script>
+    <script>
+        console.log("XLSX loaded locally?", typeof XLSX !== 'undefined');
+    </script>
+
+    <!-- Main script -->
+    <script src="./script.js"></script>
+</body>
+</html>
